@@ -68,14 +68,14 @@ int main() {
 
     std::cout<< "1 - Shell sort\n";
 
-            auto start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             shell_sort(n,vec);
-            auto end = std::chrono::system_clock::now();
+            end = std::chrono::system_clock::now();
 
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
+            end_time = std::chrono::system_clock::to_time_t(end);
             std::cout << "Calculations are finished on " << std::ctime(&end_time)
                       << "Algorithm execution time: " << elapsed_seconds << "s\n"
                       << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
@@ -85,14 +85,14 @@ int main() {
 
     std::cout<< "2 - Bubble sort\n";
 
-            auto start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             bubble_sort(n,vec);
-            auto end = std::chrono::system_clock::now();
+            end = std::chrono::system_clock::now();
 
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
+            end_time = std::chrono::system_clock::to_time_t(end);
             std::cout << "Calculations are finished on " << std::ctime(&end_time)
                       << "Algorithm execution time: " << elapsed_seconds << "s\n"
                       << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
@@ -102,14 +102,14 @@ int main() {
 
     std::cout<< "3 - Even and odd sort\n";
 
-            auto start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             even_odd_sort(n, vec);
-            auto end = std::chrono::system_clock::now();
+            end = std::chrono::system_clock::now();
 
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
+            end_time = std::chrono::system_clock::to_time_t(end);
             std::cout << "Calculations are finished on " << std::ctime(&end_time)
                       << "Algorithm execution time: " << elapsed_seconds << "s\n"
                       << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
@@ -119,14 +119,14 @@ int main() {
 
     std::cout<< "4 - Coctail sort\n";
 
-            auto start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             coctail_sort(n, vec);
-            auto end = std::chrono::system_clock::now();
+            end = std::chrono::system_clock::now();
 
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
+            end_time = std::chrono::system_clock::to_time_t(end);
             std::cout << "Calculations are finished on " << std::ctime(&end_time)
                       << "Algorithm execution time: " << elapsed_seconds << "s\n"
                       << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
@@ -136,20 +136,20 @@ int main() {
 
     std::cout<< "5 - Comb sort\n";
 
-            auto start = std::chrono::system_clock::now();
+            start = std::chrono::system_clock::now();
             comb_sort(n, vec);
-            auto end = std::chrono::system_clock::now();
+            end = std::chrono::system_clock::now();
 
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
+            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
+            end_time = std::chrono::system_clock::to_time_t(end);
             std::cout << "Calculations are finished on " << std::ctime(&end_time)
                       << "Algorithm execution time: " << elapsed_seconds << "s\n"
                       << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
 
             std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
             copy_vector(n, control_vec, vec);
-            
+
     return 0;
 }
