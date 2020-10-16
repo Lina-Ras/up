@@ -1,15 +1,14 @@
 #include <iostream>
 #include <windows.h>
 #include <vector>
-#include <chrono>
 #include "sorting_algorithms.h"
 #include "vectorLR.h"
 #include "data_generation.h"
 
 
-
 extern int number_of_comparisons;
 extern int number_of_exchanges;
+
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -49,107 +48,22 @@ int main() {
     }
 
     std::cout<< "0 - Insertion sort\n";
-
-            auto start = std::chrono::system_clock::now();
-            insertion_sort(n,vec);
-            auto end = std::chrono::system_clock::now();
-
-            auto elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            auto elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            time_t end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-
-
+    timer(insertion_sort, n, vec);
 
     std::cout<< "1 - Shell sort\n";
-
-            start = std::chrono::system_clock::now();
-            shell_sort(n,vec);
-            end = std::chrono::system_clock::now();
-
-            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-            copy_vector(n, control_vec, vec);
+    timer(shell_sort, n, vec);
 
     std::cout<< "2 - Bubble sort\n";
-
-            start = std::chrono::system_clock::now();
-            bubble_sort(n,vec);
-            end = std::chrono::system_clock::now();
-
-            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-            copy_vector(n, control_vec, vec);
+    timer(bubble_sort, n, vec);
 
     std::cout<< "3 - Even and odd sort\n";
-
-            start = std::chrono::system_clock::now();
-            even_odd_sort(n, vec);
-            end = std::chrono::system_clock::now();
-
-            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-            copy_vector(n, control_vec, vec);
+    timer(even_odd_sort, n, vec);
 
     std::cout<< "4 - Coctail sort\n";
-
-            start = std::chrono::system_clock::now();
-            coctail_sort(n, vec);
-            end = std::chrono::system_clock::now();
-
-            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-            copy_vector(n, control_vec, vec);
+    timer(coctail_sort, n, vec);
 
     std::cout<< "5 - Comb sort\n";
-
-            start = std::chrono::system_clock::now();
-            comb_sort(n, vec);
-            end = std::chrono::system_clock::now();
-
-            elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>(end - start).count();
-            elapsed_milliseconds = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-
-            end_time = std::chrono::system_clock::to_time_t(end);
-            std::cout << "Calculations are finished on " << std::ctime(&end_time)
-                      << "Algorithm execution time: " << elapsed_seconds << "s\n"
-                      << "Algorithm execution time: " << elapsed_milliseconds << "ms\n";
-
-            std::cout << "number_of_exchanges: " << number_of_exchanges << ", number_of_comparisons: " << number_of_comparisons << '\n';
-            copy_vector(n, control_vec, vec);
+    timer(comb_sort, n, vec);
 
     return 0;
 }
